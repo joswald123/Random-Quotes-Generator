@@ -4,41 +4,49 @@
 const quotes = [
   {
       quote: "What necessity is there to dwell on the Past, when the Present is so much surer—the Future so much brighter?",
-      source: " ~Charlotte Bronte",
+      source: "Charlotte Bronte",
       citation: "Jane Eyre",
       year: 1847
   },
   {
-      quote: "What necessity is there to dwell on the Past,",
-      source: " ~Jane Eyre",
-      citation: "(Charlotte Bronte, 1847, p. 265)",
-      year: 1848
+      quote: "The Tin Woodman knew very well he had no heart, and therefore he took great care never to be cruel or unkind to anything.",
+      source: "L. Frank Baum",
+      citation: " The Wonderful Wizard of Oz",
+      year: 1900
   },
   {
-      quote: "What necessity is there to dwell on the Past, when the Present is so much surer—the Future so much brighter?",
-      source: " ~Jane Eyre"
+      quote: "It has been said that the love of money is the root of all evil. The want of money is so quite as truly.",
+      source: "Samuel Butler",
+      citation: "Erewhon",
+      year: 1872
   },
   {
-      quote: "What necessity is there to dwell on the Past, when the Present is so much surer—the Future so much brighter?",
-      source: " ~Jane Eyre",
-      citation: "(Charlotte Bronte, 1847, p. 265)",
-      year: 1850
+      quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+      source: "Nelson Mandela",
   },
   {
-      quote: "What necessity is there to dwell on the Past, when the Present is so much surer—the Future so much brighter?",
-      source: " ~Jane Eyre"
+      quote: "The way to get started is to quit talking and begin doing",
+      source: "Walt Disney"
   },
   {
-      quote: "What necessity is there to dwell on the Past, when the Present is so much surer—the Future so much brighter?",
-      source: " ~Jane Eyre",
-      citation: "(Charlotte Bronte, 1847, p. 265)",
-      year: 1852
+      quote: "I wanted you to see what real courage is, instead of getting the idea that courage is a man with a gun in his hand. It’s when you know you’re licked before you begin but you begin anyway and you see it through no matter what. You rarely win, but sometimes you do.",
+      source: "Harper Lee",
+      citation: "To Kill a Mockingbird",
+      year: 1960
+  },
+  {
+    quote: "If life were predictable it would cease to be life, and be without flavor",
+    source: "Eleanor Roosevelt",
+  },
+  {
+    quote: "If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.",
+    source: "Oprah Winfrey",
   }
+
 ];
 
 /* Variable to store randomQuote button by id for event listener*/
 const randomQuoteBtn = document.querySelector('#load-quote');
-console.log(randomQuoteBtn);
 
 /* Variable to store DOM element that display random quotes used in the event listener below */
 const randomQuoteElement = document.querySelector('#quote-box');
@@ -97,16 +105,15 @@ randomQuoteBtn.addEventListener('click', () => {
 
       let html = `
            <p class="quote">${randomQuote.quote}</p>
-           <p class="source">${randomQuote.source}   
-       `;
+           <p class="source">${randomQuote.source}`;
 
        if (randomQuote.citation) {
-           html += `<span class="citation">${randomQuote.citation}, </span>`;
+           html += `<span class="citation">${randomQuote.citation}</span>`;
 
        } 
        
        if (randomQuote.year) {
-           html += `<span class="year">${randomQuote.year}</span> </p>`;
+           html += `<span class="year">${randomQuote.year}</span></p>`;
        } else {
            html += `</p>`
        }
