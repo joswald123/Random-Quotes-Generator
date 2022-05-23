@@ -6,9 +6,9 @@ Random Quotes Generator | JavaScript | HTML | CSS
 
 App that displays random famous quotes each time a button is clicked. 
 
-![Page Screen](/assets/images/![RandomQuote-1.PNG])
+![Page Screen](/assets/imgs/![RandomQuote-1.PNG])
 
-![Page Screen](/assets/images/![RandomQuote-2.PNG])
+![Page Screen](/assets/imgs/![RandomQuote-2.PNG])
 
 ### Quick Start
 1. Clone the repo - https://github.com/joswald123/Techdegree-Project-1.git
