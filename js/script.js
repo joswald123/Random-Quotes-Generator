@@ -152,8 +152,10 @@ function timing() {
   randomQuoteElement.innerHTML = printQuote(randomQuote);
   randomColorElement.style.backgroundColor = color;
 }
-// Event listener that play the timing function in a setInterval method
+// Event listener that display the first randomQuote & start the timing function in a setInterval method
 randomQuoteBtn.addEventListener("click", () => {
+  // Variable that calls the getRandomQuote() function
+  randomQuoteElement.innerHTML = printQuote(randomQuote);
   // Set Interval time that receives the timing function to show a random quote every 10000 seconds
   setInterval(timing, 10000);
 });
