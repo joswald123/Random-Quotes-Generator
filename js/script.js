@@ -155,5 +155,5 @@ function timing() {
 // Event listener that play the timing function in a setInterval method
 randomQuoteBtn.addEventListener("click", () => {
   // Set Interval time that receives the timing function to show a random quote every 10000 seconds
-  setInterval(timing, 1000);
+  setInterval(timing, 10000);
 });
