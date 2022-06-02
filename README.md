@@ -4,7 +4,7 @@ Random Quotes Generator | JavaScript | HTML | CSS
 
 ### Description
 
-App that displays random famous quotes each time a button is clicked. 
+Amazing app that displays random famous quotes & background color every 10 seconds or each time a button "Show another quote" is clicked. 
 
 ![Page Screen](/assets/imgs/RandomQuote-1.png)
 
