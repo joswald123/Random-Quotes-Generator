@@ -70,15 +70,12 @@ const quotes = [
 
 /* Variable to store randomQuote button by id for event listener*/
 const randomQuoteBtn = document.querySelector("#load-quote");
-
 /* Variable to store DOM element that display random quotes used in the event listener below */
 const randomQuoteElement = document.querySelector("#quote-box");
 /* Variable to store DOM element that generate random colors used in the event listener below */
 const randomColorElement = document.getElementById("main");
-// Variable that calls the getRandomQuote() function
-let randomQuote = getRandomQuote(quotes);
-// Variable that calls the generateRandomColor() function
-let color = generateRandomColor();
+
+let interval;
 
 /***
  * Initialize var with a random number between zero and the last index in the `quotes` array
@@ -97,7 +94,7 @@ function getRandomQuote(arrayQuotes) {
 
 /***
  * Initialize and generate three random numbers for a rgb color
- * @returns (string) random code for a rgb color
+ * @returns (numbers) combination of three random numbers
  ***/
 
 function generateRandomColor() {
@@ -109,15 +106,17 @@ function generateRandomColor() {
 }
 
 /***
- * Initialize and invoke a the randomQuote function to assign a random
- * object to a string var HTML  and print out a random Quote. If statement to check if year
- * & citation property exist, if it does, concatenate to the HTML string.
- *
- * @param (objet) randomQuote function
- * @returns (string) HTML string with the randomObject
+ * Initialize and invoke a the randomQuote function & generateRandomColor function to assign a random
+ * object to a string var HTML  and print out a random Quote whit a different background color. If statement 
+ * to check if year & citation property exist, if it does, concatenate to the HTML string.
  ***/
 
-function printQuote(randomQuote) {
+function printQuote() {
+  // Variable that calls the getRandomQuote() function
+  let randomQuote = getRandomQuote(quotes);
+  // Variable that calls the generateRandomColor() function
+  let color = generateRandomColor();
+  // Variable that creates a string 
   let html = `
           <p class="quote">${randomQuote.quote}</p>
           <p class="source">${randomQuote.source}`;
@@ -136,26 +135,22 @@ function printQuote(randomQuote) {
 
   html += `</p>`;
 
-  return html;
+  //Set the innerHTML of the `randomQuoteElement` and `randomColorElement` html & color variable created above
+  randomQuoteElement.innerHTML = html;
+  //Setting the background according to the variable Color 
+  randomColorElement.style.background = color;
+      
 }
 
-/***
- * Initialize and generate a randomQuote & color the innerHTML of the `randomQuoteElement` equals to the printQuote function.
- * @returns (string) HTML string with the randomObject
- ***/
-function timing() {
-  // Variable that calls the getRandomQuote() function
-  randomQuote = getRandomQuote(quotes);
-  // Variable that calls the generateRandomColor() function
-  color = generateRandomColor();
-  //Set the innerHTML of the `randomQuoteElement` and `randomColorElement` printQuote function & color variable created above
-  randomQuoteElement.innerHTML = printQuote(randomQuote);
-  randomColorElement.style.backgroundColor = color;
+// setInterval method to render the color and quote every 10 seconds 
+interval = setInterval(printQuote, 10000);
+
+
+//Initialize the reset function that clears the interval variable 
+const reset = () => {
+clearInterval(interval);
+ 
 }
-// Event listener that display the first randomQuote & start the timing function in a setInterval method
-randomQuoteBtn.addEventListener("click", () => {
-  // Variable that calls the getRandomQuote() function
-  randomQuoteElement.innerHTML = printQuote(randomQuote);
-  // Set Interval time that receives the timing function to show a random quote every 10000 seconds
-  setInterval(timing, 10000);
-});
+
+// Event Listener button that render a new quote & color with a click event
+randomQuoteBtn.addEventListener("click", printQuote, false); 
