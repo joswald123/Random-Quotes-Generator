@@ -11,9 +11,11 @@ Amazing app that displays random famous quotes & background color every 10 secon
 ![Page Screen](/assets/imgs/RandomQuote-2.png)
 
 ### Quick Start
-1. Clone the repo - https://github.com/joswald123/Techdegree-Project-1.git
+1. Clone the repo - https://github.com/joswald123/Random-Quotes-Generator.git
 2. Go to your project folder.
 3. Open the index.Html tab and with a right click open it in a default browser.
+
+# Live Preview: https://joswald123.github.io/Random-Quotes-Generator/
 
 
 
